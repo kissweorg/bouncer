@@ -19,8 +19,8 @@ export class JwtService {
       .setProtectedHeader({ alg: this.signingAlg })
       .setSubject(userId)
       .setIssuedAt()
-      .setIssuer('gatekeeper-dev')
-      .setAudience('bouncer-dev')
+      .setIssuer('bouncer-dev')
+      .setAudience('gatekeeper-dev')
       .setExpirationTime('2h')
       .sign(privateKey);
     this.logger.log(`Generated access token = ${jwt} for user = ${userId}`);
